@@ -178,14 +178,14 @@ button:hover {
 /* ZMIANA IKONY */
 
 /* SŁOŃCE jak jest jasne */
-/*#theme-toggle:not(:checked) ~ .page .theme-toggle::before {
+#theme-toggle:not(:checked) ~ .page .theme-toggle::before {
   content: '🌞'; /* słońce :D*/
-/*}
+}
 
 /* KSIĘŻYC jak jest ciemne */
-/*#theme-toggle:checked ~ .page .theme-toggle::before {
+#theme-toggle:checked ~ .page .theme-toggle::before {
   content: '🌙'; /* KSIĘŻYC */
-/*}
+}
 
 /* jak mi się uda z dostosowaniem do przeglądarki to żeby ważniejszy był wybór urzytkowanika*/
 /**---------------

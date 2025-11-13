@@ -1,0 +1,199 @@
+/*ogólne*/
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.page {
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/*Formularz*/
+.konkurs-formularz {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+button {
+  font-size: 16px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type='color'] {
+  height: 40px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+legend {
+  font-weight: normal;
+}
+
+.konkurs-formularz fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* każda opcja pod z tego tak/nie*/
+  gap: 1rem; /* odstęp między kolejnymi opcjami */
+}
+
+.konkurs-formularz label {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem; /* input bardzo blisko tekstu */
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.konkurs-formularz input[type='radio'],
+.konkurs-formularz input[type='checkbox'] {
+  margin: 0;
+  flex-shrink: 0; /* input nie kurczy się */
+  width: auto; /* nie zajmuje całej szerokości */
+}
+
+/*efekt hover*/
+input[type='radio'],
+input[type='checkbox'],
+input[type='color'],
+select,
+label,
+button,
+.theme-toggle {
+  cursor: pointer;
+}
+/*PRZYCISK OWO*/
+
+button {
+  background-color: #decd16;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cdad0b;
+}
+
+/* 🌗 Ikonka  */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  font-size: 50px; /*wielkość ikony ikona */
+  padding: 0.3rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* ten text z co to zmiana theme {domyślnie ukryty} */
+.theme-toggle::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fbfafa;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-size: 16px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease 0.2s, transform 0.25s ease 0.2s;
+  z-index: 10;
+}
+
+/* pokazuje nam się przy hover*/
+.theme-toggle:hover::after {
+  opacity: 1;
+}
+
+/*tryb ciemny*/
+#theme-toggle:checked ~ .page {
+  background-color: #121212;
+  color: #f2f2f2;
+}
+
+/* Formularz w środku też zmienia kolor */
+#theme-toggle:checked ~ .page .konkurs-formularz {
+  background-color: #222;
+  color: #fff;
+}
+
+#theme-toggle:checked ~ .page input,
+#theme-toggle:checked ~ .page select {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+/* ZMIANA IKONY */
+
+/* SŁOŃCE jak jest jasne */
+/*#theme-toggle:not(:checked) ~ .page .theme-toggle::before {
+  content: '🌞'; /* słońce :D*/
+/*}
+
+/* KSIĘŻYC jak jest ciemne */
+/*#theme-toggle:checked ~ .page .theme-toggle::before {
+  content: '🌙'; /* KSIĘŻYC */
+/*}
+
+/* jak mi się uda z dostosowaniem do przeglądarki to żeby ważniejszy był wybór urzytkowanika*/
+/**---------------
+#theme-toggle:checked ~ .page .theme-toggle::before {
+  content: '🌙' !important;
+}
+
+#theme-toggle:not(:checked) ~ .page .theme-toggle::before {
+  content: '🌞' !important;
+}
+------------------**/

@@ -270,3 +270,60 @@ button {
   font-size: 16px;
   font-weight: bold;
 }
+
+/*dodatki estetyczne*/
+
+.promo,
+#size label,
+button,
+#polo-img {
+  transition: background-color 0.7s ease, color 0.7s ease,
+    border-color 0.7s ease;
+}
+
+/*kolorowe kółka*/
+#color label {
+  transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+#color label:hover {
+  transform: scale(1.1);
+}
+
+/*Wybrane koło*/
+#color input[type='radio']:checked + label {
+  transform: scale(1.15);
+}
+
+/*Przyciski*/
+button {
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/*Rozmiary*/
+#size label {
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#size label:hover {
+  transform: scale(1.05);
+}
+
+/*Obrazek*/
+.polo-img {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+body:has(#color-blue:checked) #img-blue,
+body:has(#color-red:checked) #img-red,
+body:has(#color-green:checked) #img-green,
+body:has(#color-yellow:checked) #img-yellow {
+  opacity: 1;
+  transform: translateY(0);
+}

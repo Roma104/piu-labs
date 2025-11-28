@@ -1,0 +1,153 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: auto;
+}
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.container {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'aside'
+    'footer';
+}
+
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+footer {
+  grid-area: footer;
+}
+
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+}
+
+main {
+  padding: 2rem;
+}
+
+header {
+  background-color: orange;
+  color: #ffffff;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+h1 {
+  margin-top: 0.5rem;
+}
+
+div.logo {
+  border-radius: 6px;
+  background-color: #ffffff;
+  align-content: center;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-right: 2rem;
+}
+
+.logo::before {
+  content: 'Logo';
+  color: black;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+nav {
+  background-color: rgb(89, 170, 221);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 1rem;
+  padding-left: 4rem;
+  text-align: center;
+}
+
+a {
+  color: #ffffff;
+  padding: 0.5rem;
+}
+a:visited {
+  color: #ffffff;
+}
+
+a:hover {
+  color: rgb(136, 188, 245);
+}
+
+aside {
+  background-color: #caedd4;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+aside div span {
+  font-size: 4rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+aside div {
+  text-align: center;
+}
+
+footer {
+  background-color: #72e086;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    text-align: left;
+  }
+
+  .container {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      'header header'
+      'nav     nav'
+      'main   aside'
+      'footer footer';
+  }
+}
